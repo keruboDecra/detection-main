@@ -81,14 +81,13 @@ function showPopUp(data) {
                       <p style="font-weight: 600; margin-top: 2rem; font-size: 1.5rem">You can close this tab</p>
 
                       <div style="display: flex; margin-top: 2rem; align-items:center;">
-                      OR <button style="background-color: transparent; padding: 10px 15px; color: white; border-radius: 15px; text-decoration: underline;" onclick="document.getElementById('alert-offensive')?.remove()">Continue Anyway</button>
+                      OR <button id="alert-offensive-btn" style="background-color: transparent; padding: 10px 15px; color: white; border-radius: 15px; text-decoration: underline;">Continue Anyway</button>
                       </div>
-
-
                   </div>`
           ),
         args: [reasonsList, data],
       })
+      // send message "listen-for-close" to content.js
       .then((res) => console.log("injected a function", res))
       .catch((err) => console.log(err));
   });
